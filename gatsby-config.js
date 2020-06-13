@@ -14,7 +14,7 @@ module.exports = {
         basePath: "/",
         showThemeInfo: false,
         showDescriptionInSidebar: true,
-        logo: "https://antoniomika.me/images/avatar.jpg",
+        logo: "https://antoniomika.me/icon.jpg",
       },
     },
   ],
