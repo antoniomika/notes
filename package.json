@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-theme-notes",
+  "name": "notes",
   "description": "A bare-bones notes theme for Gatsby",
   "private": true,
   "version": "1.0.0",
@@ -24,10 +24,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/antoniomika/gatsby-theme-notes"
+    "url": "https://github.com/antoniomika/notes"
   },
   "bugs": {
-    "url": "https://github.com/antoniomika/gatsby-theme-notes/issues"
+    "url": "https://github.com/antoniomika/notes/issues"
   },
   "devDependencies": {
     "prettier": "2.0.5"
