@@ -1,0 +1,35 @@
+{
+  "name": "gatsby-theme-notes",
+  "description": "A bare-bones notes theme for Gatsby",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": {
+    "name": "Antonio Mika",
+    "url": "https://antonio.cx"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "dev": "gatsby develop",
+    "start": "gatsby serve",
+    "format": "prettier --write \"**/*.{js,jsx,json,md,ts,tsx}\""
+  },
+  "dependencies": {
+    "gatsby": "^2.23.1",
+    "gatsby-theme-code-notes": "1.7.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antoniomika/gatsby-theme-notes"
+  },
+  "bugs": {
+    "url": "https://github.com/antoniomika/gatsby-theme-notes/issues"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5"
+  }
+}

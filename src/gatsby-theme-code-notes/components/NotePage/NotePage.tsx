@@ -1,0 +1,134 @@
+import React, { FunctionComponent } from "react"
+import { Heading, Box, Flex, Link } from "theme-ui"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import { TagList } from "gatsby-theme-code-notes/src/components/TagList"
+import { Layout } from "gatsby-theme-code-notes/src/components/Layout"
+import { DateModified } from "gatsby-theme-code-notes/src/components/DateModified"
+import { useSiteMetadata } from "gatsby-theme-code-notes/src/use-site-metadata"
+import { Contents } from "gatsby-theme-code-notes/src/components/Contents"
+
+interface NotePageProps {
+  data: {
+    mdx: {
+      frontmatter: {
+        tags: string[]
+        title: string
+        emoji: string
+        link: string
+        date: Date
+      }
+      body: any
+      fields: {
+        dateModified: string
+      }
+      parent: {
+        name: string
+        fileName: string
+      }
+      tableOfContents: any
+    }
+  }
+  pageContext: {
+    id: string
+    previous: boolean
+    next: boolean
+    hasUntagged: boolean
+    basePath?: string
+  }
+  location: {
+    pathname: string
+  }
+}
+
+export const NotePage: FunctionComponent<NotePageProps> = ({
+  data,
+  pageContext,
+  location,
+}) => {
+  if (!data) {
+    return null
+  }
+  const {
+    frontmatter: { title, tags, emoji, link, date },
+    fields: { dateModified },
+    body,
+    parent: { fileName },
+    tableOfContents,
+  } = data.mdx
+
+  const { gitRepoContentPath } = useSiteMetadata()
+  const showMetadata = !!(link || dateModified || date)
+
+  return (
+    <Layout
+      hasUntagged={pageContext.hasUntagged}
+      basePath={pageContext.basePath}
+      path={location.pathname}
+      title={title}
+    >
+      <article>
+        <Box as="header" mb={4}>
+          {emoji && (
+            <Box
+              sx={{
+                fontSize: 7,
+                lineHeight: 1,
+                mb: 3,
+              }}
+            >
+              <span role="img">{emoji}</span>
+            </Box>
+          )}
+
+          <Heading as="h1" variant="noteTitle">
+            {title}
+          </Heading>
+
+          {showMetadata && (
+            <Flex sx={{ mb: 3 }}>
+              {link && (
+                <Link
+                  href={link}
+                  sx={{ mr: 3, fontFamily: "monospace", fontSize: 0 }}
+                >
+                  {link}
+                </Link>
+              )}
+              {false && <DateModified>{dateModified}</DateModified>}
+            </Flex>
+          )}
+
+          {tags && (
+            <Flex>
+              <TagList tags={tags} />
+            </Flex>
+          )}
+        </Box>
+
+        <Contents toc={tableOfContents} />
+
+        <MDXRenderer>{body}</MDXRenderer>
+
+        <Box
+          sx={{
+            mt: 6,
+            pt: 4,
+            borderTop: "2px solid",
+            borderTopColor: "background",
+          }}
+        >
+          <Flex>
+            {gitRepoContentPath && (
+              <Link href={`${gitRepoContentPath}${fileName}`}>
+                Edit this page
+              </Link>
+            )}
+          </Flex>
+          <p>
+            <DateModified>Date: {date}</DateModified>
+          </p>
+        </Box>
+      </article>
+    </Layout>
+  )
+}
