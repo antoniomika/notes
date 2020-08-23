@@ -7,7 +7,7 @@ link: ""
 date: "2020-06-13"
 ---
 
-This is an example note, see below for some code.
+Welcome! This is my new note taking/blogging site!
 
 ```go
 package main
