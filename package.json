@@ -11,6 +11,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "deploy": "npm run build && gh-pages -d public -b gh-pages",
     "clean": "gatsby clean",
     "dev": "gatsby develop",
     "start": "gatsby serve",
@@ -30,6 +31,7 @@
     "url": "https://github.com/antoniomika/notes/issues"
   },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "prettier": "2.0.5"
   }
 }
