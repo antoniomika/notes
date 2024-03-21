@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  notes:
+    volumes:
+      - ./notes:/app/notes:ro
+      - ./static:/app/static:ro
+    command: yarn run dev -H 0.0.0.0
