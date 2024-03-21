@@ -737,13 +737,16 @@ This compose file lives in `/backup/misc/monitoring`, so it is also retained as 
 
 Here are some graphs from Grafana:
 
-![smart status 1](/images/zfs-nas/smart-1.png)
-![smart status 2](/images/zfs-nas/smart-2.png)
-![smart status 3](/images/zfs-nas/smart-3.png)
-
-![docker status 1](/images/zfs-nas/docker-1.png)
-![docker status 2](/images/zfs-nas/docker-2.png)
-
+<img src="/images/zfs-nas/smart-1.png" style="max-width: 100%;" />
+<br/>
+<img src="/images/zfs-nas/smart-2.png" style="max-width: 100%;" />
+<br/>
+<img src="/images/zfs-nas/smart-3.png" style="max-width: 100%;" />
+<br/>
+<img src="/images/zfs-nas/docker-1.png" style="max-width: 100%;" />
+<br/>
+<img src="/images/zfs-nas/docker-2.png" style="max-width: 100%;" />
+<br/>
 
 ## Networking
 
