@@ -1,5 +1,5 @@
 ---
-title: Roll you own ZFS NAS
+title: Roll your own ZFS NAS
 tags:
   - blog
 emoji: ""
